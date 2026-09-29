@@ -50,23 +50,16 @@ body, html {
   background: linear-gradient(
     to bottom,
     rgba(0, 0, 0, 1) 0%,
-    rgba(0, 0, 0, 1) 2%,
-    rgba(0, 0, 0, 0.977) 3%,
-    rgba(0, 0, 0, 0.892) 5%,
-    rgba(0, 0, 0, 0.761) 7%,
-    rgba(0, 0, 0, 0.602) 9%,
-    rgba(0, 0, 0, 0.432) 11%,
-    rgba(0, 0, 0, 0.320) 13%,
-    rgba(0, 0, 0, 0.237) 15%,
-    rgba(0, 0, 0, 0.176) 17%,
-    rgba(0, 0, 0, 0.112) 20%,
-    rgba(0, 0, 0, 0.071) 23%,
-    rgba(0, 0, 0, 0.046) 26%,
-    rgba(0, 0, 0, 0.025) 30%,
-    rgba(0, 0, 0, 0.014) 34%,
-    rgba(0, 0, 0, 0.008) 38%,
-    rgba(0, 0, 0, 0.004) 43%,
-    rgba(0, 0, 0, 0) 50%
+    rgba(0, 0, 0, 1) 4%,
+    rgba(0, 0, 0, 0.977) 6%,
+    rgba(0, 0, 0, 0.892) 9%,
+    rgba(0, 0, 0, 0.761) 11%,
+    rgba(0, 0, 0, 0.602) 14%,
+    rgba(0, 0, 0, 0.432) 17%,
+    rgba(0, 0, 0, 0.269) 20%,
+    rgba(0, 0, 0, 0.131) 22%,
+    rgba(0, 0, 0, 0.036) 25%,
+    rgba(0, 0, 0, 0) 28%
   );
   transition: opacity 0.4s ease, visibility 0.4s ease;
   min-height: 90px; /* Trava a altura mínima para que o cabeçalho não pule entre as páginas */
