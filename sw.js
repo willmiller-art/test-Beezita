@@ -1,6 +1,6 @@
 // --- SERVICE WORKER BEEZITA ---
 
-const CACHE_NAME = 'beezita-cache-v0.9.5.7-TopBackgound-B-beta'; // Força a atualização do PWA quando muda a versão do cache.
+const CACHE_NAME = 'beezita-cache-v0.9.5.7-TopBackgound-C-beta'; // Força a atualização do PWA quando muda a versão do cache.
 const MAP_CACHE_NAME = 'beezita-map-tiles-v1';
 
 const urlsToCache = [
