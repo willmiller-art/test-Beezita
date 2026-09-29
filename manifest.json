@@ -1,7 +1,7 @@
 {
   "id": "/beezita-mhnjb",
-  "name": "Beezita - MHNJB",
-  "short_name": "Beezita",
+  "name": "Beezita - MHNJB - Test",
+  "short_name": "Beezita (teste)",
   "description": "Explore o Museu de História Natural e Jardim Botânico com as abelhas polinizadoras.",
   "start_url": "./index.html",
   "dir": "ltr",
