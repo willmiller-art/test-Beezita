@@ -121,6 +121,19 @@ body.recompensa-ativa .top-header {
     justify-content: center;
 }
 
+/* CÁPSULA DO TÍTULO: aparece só quando há a abelha (tela inicial) */
+.brand-title:has(.bee-logo) {
+  transform: none;                 /* troca o translateY(4px) pelo padding-top abaixo */
+  min-height: 45px;                /* ALTURA: mesma dos botões redondos */
+  padding: 8px 18px 0 18px;        /* topo 8px = mantém o conteúdo na posição atual | 18px = LARGURA (esq/dir) */
+  border-radius: 999px;
+  border: 1px solid var(--glass-border);
+  background: var(--glass-bg);
+  backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+  box-shadow: 0 0 15px rgba(0,0,0,0.5);
+  flex-shrink: 0;
+}
+
 .bottom-nav {
   position: absolute;
   bottom: 20px; left: 20px; right: 20px; width: calc(100% - 40px);
@@ -778,6 +791,7 @@ body.access-high-contrast .glass-panel {
 
 /* Força os botões a ficarem sólidos também */
 body.access-high-contrast .circle-btn,
+body.access-high-contrast .brand-title:has(.bee-logo),
 body.access-high-contrast .nav-item,
 body.access-high-contrast .map-floating-round-btn {
   background: #000000 !important;
