@@ -8,7 +8,7 @@
   "display": "standalone",
   "orientation": "portrait",
   "background_color": "#121510",
-  "theme_color": "#FFD15C",
+  "theme_color": "#000000",
   "categories": ["education", "travel"],
   "icons": [
     {
