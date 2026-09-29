@@ -1,0 +1,27 @@
+{
+  "id": "/beezita-mhnjb",
+  "name": "Beezita - MHNJB",
+  "short_name": "Beezita",
+  "description": "Explore o Museu de História Natural e Jardim Botânico com as abelhas polinizadoras.",
+  "start_url": "./index.html",
+  "dir": "ltr",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#121510",
+  "theme_color": "#FFD15C",
+  "categories": ["education", "travel"],
+  "icons": [
+    {
+      "src": "./icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "./icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
