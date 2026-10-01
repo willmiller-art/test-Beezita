@@ -1570,6 +1570,12 @@ body.recompensa-ativa .trail-nav-group #btn-prev-point {
     box-shadow: none !important; /* Mata a sombra que estava vazando para dentro do app */
 }
 
+/* Remove a moldura clara (borda) dos painéis de tela cheia */
+.settings-panel.glass-panel,
+.sub-settings-panel.glass-panel {
+    border-color: transparent;
+}
+
 /* =========================================================
    MENSAGEM FLUTUANTE (TOAST DE AVISOS DO GPS)
 ========================================================= */
