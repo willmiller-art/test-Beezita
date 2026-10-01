@@ -136,6 +136,20 @@ body.recompensa-ativa .top-header {
   flex-shrink: 0;
 }
 
+/* Entrada suave da cápsula ao voltar para a Trilha (mesmo tempo da troca de páginas) */
+.brand-title:has(.bee-logo) { animation: capsula-entra 0.3s ease; }
+@keyframes capsula-entra { from { opacity: 0; } to { opacity: 1; } }
+
+/* "Fantasma" da cápsula: cópia criada pelo JS que apaga suavemente ao sair da Trilha */
+.top-header .brand-title.brand-title-fantasma {
+  position: absolute;
+  margin: 0;
+  z-index: -1;               /* fica atrás do novo título, sem borrá-lo */
+  pointer-events: none;      /* não captura toque */
+  animation: capsula-sai 0.3s ease forwards;
+}
+@keyframes capsula-sai { from { opacity: 1; } to { opacity: 0; } }
+
 .bottom-nav {
   position: absolute;
   bottom: 20px; left: 20px; right: 20px; width: calc(100% - 40px);
@@ -1946,4 +1960,48 @@ body.modo-desktop #btn-download-mapa {
         width: 100% !important;
         max-width: 450px !important; /* Restaura a largura exata original */
     }
+}
+
+/* =========================================================
+   DEGRADÊ SUPERIOR EM TODAS AS TELAS (mesma curva do .top-header)
+========================================================= */
+:root {
+  --top-fade-h: 90px; /* altura do degradê: igual ao min-height do .top-header */
+  --top-fade: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(0, 0, 0, 1) 1%,
+    rgba(0, 0, 0, 0.977) 6%,
+    rgba(0, 0, 0, 0.892) 13%,
+    rgba(0, 0, 0, 0.761) 19%,
+    rgba(0, 0, 0, 0.602) 26%,
+    rgba(0, 0, 0, 0.432) 32%,
+    rgba(0, 0, 0, 0.269) 39%,
+    rgba(0, 0, 0, 0.131) 45%,
+    rgba(0, 0, 0, 0.036) 52%,
+    rgba(0, 0, 0, 0) 58%
+  );
+}
+
+/* 1) TELAS DE RECOMPENSA: por cima do fundo e dos textos, ABAIXO da moldura amarela */
+#discovery-overlay::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: var(--top-fade-h);
+  background: var(--top-fade);
+  pointer-events: none;
+  z-index: 2;
+}
+.discovery-frame-group { z-index: 3; } /* a moldura fica acima do degradê */
+
+/* 2) CONFIGURAÇÕES E SUBPÁGINAS: degradê sobre o fundo do painel, abaixo dos textos */
+.settings-panel::before,
+.sub-settings-panel::before {
+  content: '';
+  position: absolute;
+  top: -1px; left: -1px; right: -1px; /* cobre também a borda de 1px do vidro */
+  height: var(--top-fade-h);
+  background: var(--top-fade);
+  pointer-events: none;
+  z-index: -1;
 }
