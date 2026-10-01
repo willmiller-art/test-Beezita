@@ -43,6 +43,25 @@ function updateCaput(pageId) {
     const brandTitle = document.querySelector('.top-header .brand-title');
     if (!brandTitle) return;
 
+    // Ao SAIR da Trilha: cria um "fantasma" da cápsula que apaga suavemente
+    // (mesmo comportamento da pílula da direita). Se algo falhar, a troca de aba segue normal.
+    try {
+        if (pageId !== 'home' && brandTitle.querySelector('.bee-logo')) {
+            const header = brandTitle.closest('.top-header');
+            const r = brandTitle.getBoundingClientRect();
+            const h = header.getBoundingClientRect();
+            const fantasma = brandTitle.cloneNode(true);
+            fantasma.classList.add('brand-title-fantasma');
+            fantasma.setAttribute('aria-hidden', 'true');
+            fantasma.style.left = (r.left - h.left) + 'px';
+            fantasma.style.top = (r.top - h.top) + 'px';
+            fantasma.style.width = r.width + 'px';
+            fantasma.style.height = r.height + 'px';
+            header.appendChild(fantasma);
+            setTimeout(() => fantasma.remove(), 350);
+        }
+    } catch (e) { /* ignora: não pode atrapalhar a troca de aba */ }
+
     if (pageId === 'home') {
         brandTitle.innerHTML = `
             <div class="custom-bee-icon bee-logo"></div>
